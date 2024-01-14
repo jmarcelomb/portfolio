@@ -13,7 +13,7 @@ RUN npm install tailwindcss -g
 
 COPY . .
 
-RUN npx tailwindcss -i style/tailwind.css -o style/generated.css --minify
+RUN npx tailwindcss -i input.css -o style/output.css --minify
 RUN cargo leptos build --release
 
 

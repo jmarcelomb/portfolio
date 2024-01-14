@@ -1,7 +1,10 @@
 [package]
-name = "tailwind-csr-trunk"
+name = "portfolio"
 version = "0.1.0"
 edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 log = "0.4"
@@ -16,3 +19,15 @@ leptos = { version = "0.5.4", features = ["csr", "nightly"] }
 leptos_meta = { version = "0.5.4", features = ["csr", "nightly"] }
 leptos_router = { version = "0.5.4", features = ["csr", "nightly"] }
 
+
+[package.metadata.leptos]
+site-root = "target/site"
+site-pkg-dir = "pkg"
+style-file = "style/output.css"
+# assets-dir = "assets"
+site-addr = "127.0.0.1:3000"
+reload-port = 3001
+browserquery = "defaults"
+env = "DEV"
+bin-features = ["ssr"]
+lib-features = ["hydrate"]
