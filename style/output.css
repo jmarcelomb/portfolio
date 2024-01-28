@@ -577,8 +577,3 @@ video {
     max-width: 1536px;
   }
 }
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
