@@ -20,18 +20,20 @@ pub fn App() -> impl IntoView {
 fn Home(increment: i32) -> impl IntoView {
     let (count, set_count) = create_signal(0);
 
+    logging::log!("At home element");
+
     view! {
-    <div class="container bg-gray-500 items-center">
+    <div class="container">
 
             <picture>
                 <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_pref_dark_RGB.svg" media="(prefers-color-scheme: dark)" />
                 <img src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg" alt="Leptos Logo" height="200" width="400"/>
             </picture>
 
-        <h1 class="text-cyan-500">"Welcome to Leptos"</h1>
-        <h2><i class="text-green-600">"On Github Pages"</i></h2>
+        <h1>"Welcome to Leptos"</h1>
+        <h2><i>"On Github Pages"</i></h2>
 
-        <button class="bg-yellow-600 rounded-xl m-5"
+        <button
             on:click= move |_| {
                 set_count(count() + increment)
             }
