@@ -6,8 +6,11 @@ use leptos_router::*;
 pub fn App() -> impl IntoView {
     provide_meta_context();
 
+    let site_pkg_dir = option_env!("LEPTOS_SITE_PKG_DIR").unwrap_or("pkg");
+
     view! {
-        <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
+        <Stylesheet id="leptos" href=format!("{}/tailwind.css", site_pkg_dir)/>
+        <Link rel="shortcut icon" type_="image/ico" href="public/favicon.ico"/>
         <Router>
             <Routes>
                 <Route path="" view=  move || view! { <Home increment=5/> }/>
@@ -23,7 +26,7 @@ fn Home(increment: i32) -> impl IntoView {
     logging::log!("At home element");
 
     view! {
-    <div class="container">
+    <div class="container bg-gray-400">
 
             <picture>
                 <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_pref_dark_RGB.svg" media="(prefers-color-scheme: dark)" />
