@@ -1,10 +1,12 @@
 [package]
-name = "portfolio"
+name = "tailwind-csr-trunk"
 version = "0.1.0"
 edition = "2021"
 
-
 [dependencies]
+leptos = { version="0.6.3", features = ["csr", "nightly"] }
+leptos_meta = { version="0.6.3", features = ["csr", "nightly"] }
+leptos_router = { version="0.6.3", features = ["csr", "nightly"] }
 log = "0.4"
 gloo-net = { version = "0.2", features = ["http"] }
 
@@ -13,20 +15,4 @@ gloo-net = { version = "0.2", features = ["http"] }
 wasm-bindgen = { version = "0.2" }
 console_log = { version = "1"}
 console_error_panic_hook = { version = "0.1"}
-leptos = { version = "0.6.3", features = ["csr", "nightly"] }
-leptos_meta = { version = "0.6.3", features = ["csr", "nightly"] }
-leptos_router = { version = "0.6.3", features = ["csr", "nightly"] }
-
-
-[package.metadata.leptos]
-output-name = "portfolio"
-site-root = "target/site"
-site-pkg-dir = "pkg"
-style-file = "style/output.css"
-assets-dir = "public"
-browserquery = "defaults"
-env = "DEV"
-bin-features = ["csr"]
-
-
 
