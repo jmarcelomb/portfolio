@@ -20,7 +20,7 @@ leptos_router = { version = "0.6.3", features = ["csr", "nightly"] }
 
 [package.metadata.leptos]
 site-pkg-dir = "pkg"
-style-file = "style/tailwind.css"
+style-file = "style/output.css"
 browserquery = "defaults"
 env = "DEV"
 bin-features = ["csr"]

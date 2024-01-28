@@ -18,6 +18,6 @@ USER vscode
 EXPOSE 8080
 
 FROM builder AS production
-RUN npx tailwindcss -i style/tailwind.css -o style/output.css --minify
+RUN npx tailwindcss -i style/input.css -o style/output.css --minify
 COPY . .
 RUN cargo leptos build --release
