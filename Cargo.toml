@@ -19,8 +19,16 @@ leptos_router = { version = "0.6.3", features = ["csr", "nightly"] }
 
 
 [package.metadata.leptos]
+output-name = "portfolio"
+site-root = "target/site"
 site-pkg-dir = "pkg"
 style-file = "style/output.css"
+assets-dir = "public"
+site-addr = "127.0.0.1:3000"
+reload-port = 3001
 browserquery = "defaults"
 env = "DEV"
-bin-features = ["csr"]
+bin-features = ["ssr"]
+
+
+
