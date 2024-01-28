@@ -13,7 +13,9 @@ RUN cargo install --locked cargo-leptos
 RUN npm install tailwindcss -g
 
 FROM builder AS development
-RUN cargo install --locked trunk
+RUN cargo install --locked trunk 
+RUN cargo install leptosfmt
+
 USER vscode
 EXPOSE 8080
 

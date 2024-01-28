@@ -7,37 +7,40 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-
-        <Stylesheet id="leptos" href="/pkg/tailwind.css"/>
         <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
         <Router>
             <Routes>
-                <Route path="" view=  move || view! { <Home/> }/>
+                <Route path="" view=  move || view! { <Home increment=5/> }/>
             </Routes>
         </Router>
     }
 }
 
 #[component]
-fn Home() -> impl IntoView {
+fn Home(increment: i32) -> impl IntoView {
     let (count, set_count) = create_signal(0);
 
     view! {
-        <div class="my-0 mx-auto max-w-3xl text-center">
-            <h2 class="p-6 text-4xl">"Welcome to Leptos with Tailwind"</h2>
-            <p class="px-10 pb-10 text-left">"Tailwind will scan your Rust files for Tailwind class names and compile them into a CSS file."</p>
-            <button
-                class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
-                on:click=move |_| set_count.update(|count| *count += 1)
-            >
-                "Something's here | "
-                {move || if count() == 0 {
-                    "Click me!".to_string()
-                } else {
-                    count().to_string()
-                }}
-                " | Some more text"
-            </button>
-        </div>
+    <div class="container bg-gray-500 items-center">
+
+            <picture>
+                <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_pref_dark_RGB.svg" media="(prefers-color-scheme: dark)" />
+                <img src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg" alt="Leptos Logo" height="200" width="400"/>
+            </picture>
+
+        <h1 class="text-cyan-500">"Welcome to Leptos"</h1>
+        <h2><i class="text-green-600">"On Github Pages"</i></h2>
+
+        <button class="bg-yellow-600 rounded-xl m-5"
+            on:click= move |_| {
+                set_count(count() + increment)
+            }
+        >
+            "Click me: "
+            {count}
+        </button>
+
+
+    </div>
     }
 }
