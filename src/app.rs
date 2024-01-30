@@ -2,6 +2,8 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+use super::routes::cv as cv;
+
 #[component]
 pub fn App() -> impl IntoView {
     provide_meta_context();
@@ -12,14 +14,16 @@ pub fn App() -> impl IntoView {
         <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
         <Router>
             <Routes>
-                <Route path="" view=  move || view! { <Home/> }/>
+            <Route path="" view=  move || view! { <HomeRoot/> }/>
+            <Route path="portfolio" view=  move || view! { <HomeRoot/> }/>
+            <Route path="cv" view=  move || view! { <cv::Home/> }/>
             </Routes>
         </Router>
     }
 }
 
 #[component]
-fn Home() -> impl IntoView {
+fn HomeRoot() -> impl IntoView {
     let (count, set_count) = create_signal(0);
 
     view! {
