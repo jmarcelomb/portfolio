@@ -13,8 +13,8 @@ pub fn App() -> impl IntoView {
         <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
         <Router base="portfolio">
             <Routes>
-                <Route path="/" view=move || view! { <HomeRoot/> }/>
-                <Route path="/cv" view=move || view! { <cv::Home></cv::Home> }/>
+                <Route path="" view=move || view! { <HomeRoot/> }/>
+                <Route path="cv" view=move || view! { <cv::Home></cv::Home> }/>
             </Routes>
         </Router>
     }
