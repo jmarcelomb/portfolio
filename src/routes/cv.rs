@@ -9,7 +9,7 @@ pub fn Home() -> impl IntoView {
                     <img
                         class="h-48 md:w-48 md:h-full w-full aspect-square rounded-lg"
                         src="assets/images/profile.jpg"
-                        alt="Modern building architecture"
+                        alt="Marcelo's Photo"
                     />
                 </div>
                 <div class="p-8">
@@ -20,10 +20,10 @@ pub fn Home() -> impl IntoView {
                         href="#"
                         class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
                     >
-                        Incredible accommodation for your team
+                        "Incredible accommodation for your team"
                     </a>
                     <p class="mt-2 text-slate-500">
-                        Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.
+                        "Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that."
                     </p>
                 </div>
             </div>
