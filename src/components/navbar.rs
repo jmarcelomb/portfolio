@@ -6,15 +6,8 @@ pub fn NavBar() -> impl IntoView {
     view! {
         <nav class="bg-white border-gray-200 dark:bg-gray-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <A
-                    href=""
-                    class="flex items-center space-x-3 rtl:space-x-reverse"
-                >
-                    <img
-                        src="assets/images/logo.png"
-                        class="h-8 rounded-full"
-                        alt="jmmb Logo"
-                    />
+                <A href="" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/images/logo.png" class="h-8 rounded-full" alt="jmmb Logo"/>
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                         "jmarcelomb"
                     </span>
@@ -49,8 +42,8 @@ pub fn NavBar() -> impl IntoView {
                             <A
                                 href=""
                                 class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                                // aria-current="page"
                             >
+                                // aria-current="page"
                                 "Home"
                             </A>
                         </li>
