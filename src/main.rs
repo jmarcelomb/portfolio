@@ -1,5 +1,5 @@
 mod app;
-mod routes;
+mod pages;
 
 use app::*;
 use leptos::*;
