@@ -7,14 +7,6 @@
         "context": ".."
     },
     "features": {
-        "ghcr.io/devcontainers/features/common-utils:2": {
-            "installZsh": "true",
-            "configureZshAsDefaultShell": "true",
-            "username": "vscode",
-            "userUid": "1000",
-            "userGid": "1000",
-            "upgradePackages": "true"
-        },
         "ghcr.io/devcontainers/features/rust:1": "latest",
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
@@ -26,11 +18,11 @@
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "rustc --version",
     // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "vscode",
     "customizations": {
         "vscode": {
             "extensions": [
-                "bradlc.vscode-tailwindcss"
+                "bradlc.vscode-tailwindcss",
+                "swellaby.rust-pack"
             ]
         }
     }
