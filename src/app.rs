@@ -11,13 +11,33 @@ pub fn App() -> impl IntoView {
     view! {
         <Stylesheet id="leptos" href="/pkg/tailwind.css"/>
         <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
-        <Router fallback=move || view! { <PageNotFound/> }>
-            <Routes>
-                <Route path="portfolio/" view=move || view! { <HomeRoot/> }/>
-                <Route path="portfolio/cv" view=move || view! { <cv::Home></cv::Home> }/>
-            </Routes>
-        </Router>
+        <div id="root">
+            <Router base="/portfolio" fallback=move || view! { <PageNotFound/> }>
+                // <nav> and <main> will show on every route
+                <nav>
+                    <A href="">"Home"</A>
+                    <A href="cv" class="my-class">
+                        "CV"
+                    </A>
+                    <A href="about" class="about">
+                        "About"
+                    </A>
+                </nav>
+                <main>
+                    <Routes base="/portfolio".to_string()>
+                        <Route path="/" view=move || view! { <HomeRoot/> }/>
+                        <Route path="/cv" view=move || view! { <cv::Home></cv::Home> }/>
+                        <Route path="/about" view=About/>
+                    </Routes>
+                </main>
+            </Router>
+        </div>
     }
+}
+
+#[component]
+fn About() -> impl IntoView {
+  view! { <p>"About Marcelo Page :D"</p> }
 }
 
 #[component]

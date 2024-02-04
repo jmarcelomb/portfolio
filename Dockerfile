@@ -23,3 +23,5 @@ FROM builder AS production
 RUN npx tailwindcss -i input.css -o style/output.css --minify
 COPY . .
 RUN cargo leptos build --release
+
+CMD ["sleep", "infinity"]
