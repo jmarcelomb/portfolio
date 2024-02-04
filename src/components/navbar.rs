@@ -12,7 +12,7 @@ pub fn NavBar() -> impl IntoView {
                 >
                     <img
                         src="assets/images/logo.png"
-                        class="h-8 rounded"
+                        class="h-8 rounded-full"
                         alt="jmmb Logo"
                     />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
