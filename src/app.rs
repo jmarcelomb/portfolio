@@ -6,6 +6,7 @@ use super::pages::about;
 use super::pages::cv;
 use super::pages::home;
 use super::pages::not_found;
+use super::components::navbar;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -19,16 +20,17 @@ pub fn App() -> impl IntoView {
                 base="/portfolio"
                 fallback=move || view! { <not_found::PageNotFound></not_found::PageNotFound> }
             >
-                // <nav> and <main> will show on every route
-                <nav>
-                    <A href="">"Home"</A>
-                    <A href="cv" class="my-class">
-                        "CV"
-                    </A>
-                    <A href="about" class="about">
-                        "About"
-                    </A>
-                </nav>
+                <navbar::NavBar />
+                // // <nav> and <main> will show on every route
+                // <nav>
+                //     <A href="">"Home"</A>
+                //     <A href="cv" class="my-class">
+                //         "CV"
+                //     </A>
+                //     <A href="about" class="about">
+                //         "About"
+                //     </A>
+                // </nav>
                 <main>
                     <Routes base="/portfolio".to_string()>
                         <Route path="/" view=move || view! { <home::Home></home::Home> }/>
