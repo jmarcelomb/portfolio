@@ -2,5 +2,5 @@ use leptos::*;
 
 #[component]
 pub fn About() -> impl IntoView {
-    view! { <p>"About Marcelo Page :D"</p> }
+    view! { <p class="text-gray-900 dark:text-white">"About Marcelo Page :D"</p> }
 }
