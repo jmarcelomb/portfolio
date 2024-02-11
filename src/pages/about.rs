@@ -10,7 +10,7 @@ pub fn About() -> impl IntoView {
                 <div class="md:shrink-0">
                     <img
                         class="h-48 w-full object-cover md:h-full md:w-48"
-                        src="/img/building.jpg"
+                        src="/assets/images/logo.png"
                         alt="Modern building architecture"
                     />
                 </div>
