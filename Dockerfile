@@ -7,9 +7,8 @@ RUN apt update && \
 	npm
 
 RUN rustup default nightly 
-RUN rustup target add wasm32-unknown-unknown
+RUN rustup target add wasm32-unknown-unknown wasm32-wasi
 
-RUN cargo install --locked cargo-leptos
 RUN npm install tailwindcss -g
 
 FROM builder AS development
@@ -24,6 +23,7 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 EXPOSE 8080
 
 FROM builder AS production
+RUN cargo install --locked cargo-leptos
 RUN npx tailwindcss -i input.css -o style/output.css --minify
 COPY . .
 RUN cargo leptos build --release
