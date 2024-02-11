@@ -23,12 +23,12 @@ pub fn NavBar() -> impl IntoView {
                         <img
                             alt="dark"
                             src="assets/images/logo-dark.svg"
-                            class="dark:hidden mr-3 h-6 sm:h-8 block w-auto"
+                            class="dark:hidden w-auto mr-3 h-6 sm:h-8"
                         />
                         <img
                             alt="light"
                             src="assets/images/logo-light.svg"
-                            class="dark:block mr-3 h-6 sm:h-8 block w-auto"
+                            class="hidden dark:inline w-auto mr-3 h-6 sm:h-8"
                         />
                     </button>
                     <button

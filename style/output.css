@@ -1071,8 +1071,8 @@ video {
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
 }
 
-:is(.dark .dark\:block) {
-  display: block;
+:is(.dark .dark\:inline) {
+  display: inline;
 }
 
 :is(.dark .dark\:hidden) {
